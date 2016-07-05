@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Txf-jw-qNo">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="CGP-Aq-Ecw">
+            <objects>
+                <navigationController id="Txf-jw-qNo" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CJs-SL-OJA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="MFp-E4-V7z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EM0-sh-v5X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-984" y="337"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" userLabel="Main View Controller" customClass="MainController" customModule="Assignment2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cch-uE-FWO" userLabel="Problem 3 Button">
+                                <rect key="frame" x="265" y="285" width="71" height="30"/>
+                                <state key="normal" title="Problem 3"/>
+                                <connections>
+                                    <segue destination="bxk-NT-M5T" kind="show" id="XpE-mB-pnF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sx-Qw-ozQ" userLabel="Problem 4 Button">
+                                <rect key="frame" x="265" y="375" width="71" height="30"/>
+                                <state key="normal" title="Problem 4"/>
+                                <connections>
+                                    <segue destination="jVz-kV-IL1" kind="show" id="rGz-bs-VeL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VD4-Qu-VXA" userLabel="Problem 2 Button">
+                                <rect key="frame" x="265" y="195" width="70" height="30"/>
+                                <state key="normal" title="Problem 2"/>
+                                <connections>
+                                    <segue destination="Zxj-Mk-bMI" kind="show" id="uv3-gI-3FI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cch-uE-FWO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2lK-2l-gaa"/>
+                            <constraint firstItem="VD4-Qu-VXA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2t1-hi-WPh"/>
+                            <constraint firstItem="1sx-Qw-ozQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ix9-xK-khA"/>
+                            <constraint firstItem="cch-uE-FWO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nzm-ld-7qZ"/>
+                            <constraint firstItem="cch-uE-FWO" firstAttribute="top" secondItem="VD4-Qu-VXA" secondAttribute="bottom" constant="60" id="Xxb-Tj-2Pe"/>
+                            <constraint firstItem="1sx-Qw-ozQ" firstAttribute="top" secondItem="cch-uE-FWO" secondAttribute="bottom" constant="60" id="Z2l-HX-enI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="PVL-tv-Ba2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-191" y="355"/>
+        </scene>
+        <!--Problem 2 View Controller-->
+        <scene sceneID="TXo-xz-IgQ">
+            <objects>
+                <viewController id="Zxj-Mk-bMI" userLabel="Problem 2 View Controller" customClass="Problem2ViewController" customModule="Assignment2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ccz-JR-3QJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="zbC-0S-KKO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cJE-Jb-QuC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6z-1u-51v" userLabel="Alpha View">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.41978016600000001" green="1" blue="0.30411971980000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cPJ-gj-xHo" userLabel="Problem 2Text View">
+                                <rect key="frame" x="40" y="84" width="520" height="466"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RI-OJ-hAx" userLabel="Problem 2 Run Button">
+                                <rect key="frame" x="285" y="550" width="30" height="30"/>
+                                <state key="normal" title="Run"/>
+                                <connections>
+                                    <action selector="Problem2Button:" destination="Zxj-Mk-bMI" eventType="touchUpInside" id="wBc-JB-1H2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="cPJ-gj-xHo" secondAttribute="trailing" constant="20" id="3LC-ZW-YdA"/>
+                            <constraint firstItem="zbC-0S-KKO" firstAttribute="top" secondItem="s6z-1u-51v" secondAttribute="bottom" id="4fW-td-pwI"/>
+                            <constraint firstItem="cPJ-gj-xHo" firstAttribute="leading" secondItem="cJE-Jb-QuC" secondAttribute="leadingMargin" constant="20" id="9IG-xI-2dE"/>
+                            <constraint firstItem="s6z-1u-51v" firstAttribute="top" secondItem="Ccz-JR-3QJ" secondAttribute="bottom" id="IaV-bV-we3"/>
+                            <constraint firstItem="cPJ-gj-xHo" firstAttribute="top" secondItem="Ccz-JR-3QJ" secondAttribute="bottom" constant="20" id="MzH-ay-Qyd"/>
+                            <constraint firstItem="s6z-1u-51v" firstAttribute="leading" secondItem="cJE-Jb-QuC" secondAttribute="leadingMargin" constant="-20" id="PG8-Sk-fMa"/>
+                            <constraint firstItem="zbC-0S-KKO" firstAttribute="top" secondItem="6RI-OJ-hAx" secondAttribute="bottom" constant="20" id="Unv-Of-avI"/>
+                            <constraint firstItem="cPJ-gj-xHo" firstAttribute="centerX" secondItem="cJE-Jb-QuC" secondAttribute="centerX" id="c5r-vh-JHO"/>
+                            <constraint firstItem="6RI-OJ-hAx" firstAttribute="centerX" secondItem="cJE-Jb-QuC" secondAttribute="centerX" id="cmJ-Pc-laH"/>
+                            <constraint firstItem="cPJ-gj-xHo" firstAttribute="centerX" secondItem="cJE-Jb-QuC" secondAttribute="centerX" id="dWs-HV-fHh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s6z-1u-51v" secondAttribute="trailing" constant="-20" id="tJL-Hv-5Zi"/>
+                            <constraint firstItem="zbC-0S-KKO" firstAttribute="top" secondItem="cPJ-gj-xHo" secondAttribute="bottom" constant="50" id="yW5-2G-rvQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Problem2TextView" destination="cPJ-gj-xHo" id="IBf-EO-Atb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uVt-jc-WK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="504" y="-326"/>
+        </scene>
+        <!--Problem 3 View Controller-->
+        <scene sceneID="g75-zz-ypB">
+            <objects>
+                <viewController id="bxk-NT-M5T" userLabel="Problem 3 View Controller" customClass="Problem3ViewController" customModule="Assignment2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EwL-yQ-yew"/>
+                        <viewControllerLayoutGuide type="bottom" id="hZG-hB-GtE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xpm-W7-vTD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrQ-zH-Jk8" userLabel="Alpha View">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="1" green="0.98700050350000001" blue="0.24380077999999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gQa-pd-p9k" userLabel="Problem 3 Text View">
+                                <rect key="frame" x="40" y="84" width="520" height="466"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjc-Ke-tiL" userLabel="Problem 3 Run Button">
+                                <rect key="frame" x="285" y="550" width="30" height="30"/>
+                                <state key="normal" title="Run"/>
+                                <connections>
+                                    <action selector="Problem3Button:" destination="bxk-NT-M5T" eventType="touchUpInside" id="zgt-AV-LJt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="mrQ-zH-Jk8" secondAttribute="trailing" constant="-20" id="5hh-Wy-o1f"/>
+                            <constraint firstItem="gQa-pd-p9k" firstAttribute="leading" secondItem="Xpm-W7-vTD" secondAttribute="leadingMargin" constant="20" id="70g-XJ-bjG"/>
+                            <constraint firstItem="mrQ-zH-Jk8" firstAttribute="top" secondItem="EwL-yQ-yew" secondAttribute="bottom" id="BHV-Hk-lzv"/>
+                            <constraint firstItem="gQa-pd-p9k" firstAttribute="top" secondItem="EwL-yQ-yew" secondAttribute="bottom" constant="20" id="LYU-97-Mzi"/>
+                            <constraint firstItem="hZG-hB-GtE" firstAttribute="top" secondItem="gQa-pd-p9k" secondAttribute="bottom" constant="50" id="V3f-mX-8VN"/>
+                            <constraint firstItem="mrQ-zH-Jk8" firstAttribute="leading" secondItem="Xpm-W7-vTD" secondAttribute="leadingMargin" constant="-20" id="Ygt-1Q-LVi"/>
+                            <constraint firstItem="zjc-Ke-tiL" firstAttribute="centerX" secondItem="Xpm-W7-vTD" secondAttribute="centerX" id="ZkZ-Y8-ii7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gQa-pd-p9k" secondAttribute="trailing" constant="20" id="agv-av-Mxw"/>
+                            <constraint firstItem="hZG-hB-GtE" firstAttribute="top" secondItem="zjc-Ke-tiL" secondAttribute="bottom" constant="20" id="oKi-Aa-fNi"/>
+                            <constraint firstItem="hZG-hB-GtE" firstAttribute="top" secondItem="mrQ-zH-Jk8" secondAttribute="bottom" id="qlL-1d-cuR"/>
+                            <constraint firstItem="gQa-pd-p9k" firstAttribute="centerX" secondItem="Xpm-W7-vTD" secondAttribute="centerX" id="qrf-T3-00i"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Problem3TextView" destination="gQa-pd-p9k" id="Yel-7O-yhG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uC4-Sz-nOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="504" y="374"/>
+        </scene>
+        <!--Problem 4 View Controller-->
+        <scene sceneID="nEH-Ok-DYM">
+            <objects>
+                <viewController id="jVz-kV-IL1" userLabel="Problem 4 View Controller" customClass="Problem4ViewController" customModule="Assignment2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IZz-Wt-XYO"/>
+                        <viewControllerLayoutGuide type="bottom" id="cxd-eN-Z3U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NOt-Wm-kjc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nqM-KH-LIY" userLabel="Alpha View">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.25767972179999998" green="0.40022882329999998" blue="0.82608173080000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AJC-sm-EmB" userLabel="Problem 4 Text View">
+                                <rect key="frame" x="40" y="84" width="520" height="466"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cl-ai-Ygc" userLabel="Problem 4 Run Button">
+                                <rect key="frame" x="285" y="550" width="30" height="30"/>
+                                <state key="normal" title="Run"/>
+                                <connections>
+                                    <action selector="Problem4Button:" destination="jVz-kV-IL1" eventType="touchUpInside" id="DnV-hl-3DY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cxd-eN-Z3U" firstAttribute="top" secondItem="nqM-KH-LIY" secondAttribute="bottom" id="3EV-z7-KC5"/>
+                            <constraint firstItem="5cl-ai-Ygc" firstAttribute="centerX" secondItem="NOt-Wm-kjc" secondAttribute="centerX" id="FNJ-pX-NuT"/>
+                            <constraint firstItem="nqM-KH-LIY" firstAttribute="leading" secondItem="NOt-Wm-kjc" secondAttribute="leadingMargin" constant="-20" id="Oud-IY-17C"/>
+                            <constraint firstItem="cxd-eN-Z3U" firstAttribute="top" secondItem="5cl-ai-Ygc" secondAttribute="bottom" constant="20" id="R8z-xg-Ubx"/>
+                            <constraint firstItem="AJC-sm-EmB" firstAttribute="top" secondItem="IZz-Wt-XYO" secondAttribute="bottom" constant="20" id="Rbs-AC-C9z"/>
+                            <constraint firstItem="AJC-sm-EmB" firstAttribute="leading" secondItem="NOt-Wm-kjc" secondAttribute="leadingMargin" constant="20" id="Yjq-WX-WDE"/>
+                            <constraint firstItem="AJC-sm-EmB" firstAttribute="centerX" secondItem="NOt-Wm-kjc" secondAttribute="centerX" id="ZgR-aj-gfw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AJC-sm-EmB" secondAttribute="trailing" constant="20" id="diF-VK-2h0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nqM-KH-LIY" secondAttribute="trailing" constant="-20" id="hbB-ED-ZG4"/>
+                            <constraint firstItem="nqM-KH-LIY" firstAttribute="top" secondItem="IZz-Wt-XYO" secondAttribute="bottom" id="y0n-ln-9jR"/>
+                            <constraint firstItem="cxd-eN-Z3U" firstAttribute="top" secondItem="AJC-sm-EmB" secondAttribute="bottom" constant="50" id="ySa-xL-xBA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Problem4TextView" destination="AJC-sm-EmB" id="ZG1-gj-oVn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GVh-VJ-7ze" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="504" y="1093"/>
+        </scene>
+    </scenes>
+</document>
