@@ -58,8 +58,8 @@
 		37823AC01D33E9D00029A97F /* Assignment3 */ = {
 			isa = PBXGroup;
 			children = (
-				37823AD51D33EC380029A97F /* GridView.swift */,
 				37823AC51D33E9D00029A97F /* Main.storyboard */,
+				37823AD51D33EC380029A97F /* GridView.swift */,
 				37823AC11D33E9D00029A97F /* AppDelegate.swift */,
 				37823AD31D33E9E20029A97F /* Cell Enum.swift */,
 				37823AC31D33E9D00029A97F /* ViewController.swift */,

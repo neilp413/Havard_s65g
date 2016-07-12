@@ -12,16 +12,7 @@ import UIKit
 
 class GridView: UIView {
     
-    @IBInspectable var rows:Int = 20{
-        didSet{
-            grid=Array(count:rows, repeatedValue:Array(count:cols, repeatedValue:CellState.Empty))
-        }
-    }
-    @IBInspectable var cols:Int = 20{
-        didSet{
-            grid=Array(count:rows, repeatedValue:Array(count:cols, repeatedValue:CellState.Empty))
-        }
-    }
+    
     @IBInspectable var livingColor:UIColor = UIColor.whiteColor()
     @IBInspectable var emptyColor:UIColor = UIColor.whiteColor()
     @IBInspectable var bornColor:UIColor = UIColor.whiteColor()
@@ -32,100 +23,165 @@ class GridView: UIView {
     
     var grid:Array<Array<CellState>>=Array(count: 20, repeatedValue: Array(count: 20, repeatedValue: CellState.Empty))
     
+    @IBInspectable var rows:Int = 20{
+        didSet{
+            grid=Array(count:rows, repeatedValue:Array(count:cols, repeatedValue:CellState.Empty))
+        }
+    }
+    @IBInspectable var cols:Int = 20{
+        didSet{
+            grid=Array(count:rows, repeatedValue:Array(count:cols, repeatedValue:CellState.Empty))
+        }
+    }
+    
+    
+    
     override func drawRect(rect: CGRect) {
         
-        //creating the grid
+//        //creating the grid
+//        
+//        //amount of lines that need to be drawn
+//        let lineAmountHorizontal = rows+1
+//        let lineAmountVertical = cols+1
+//        
+//        //creating the path
+//        let gridPath = UIBezierPath()
+//        
+//        gridPath.lineWidth=gridWidth
+//        
+//        //vertical lines
+//        
+//        //Calculating the space between the lines
+//        var spaceBetween:CGFloat = (bounds.width - gridWidth*CGFloat(lineAmountVertical))/CGFloat(cols)
+//        
+//        //the starting x position
+//        var startPoint:CGFloat = gridWidth/2
+//        
+//        for _ in 0..<lineAmountVertical{
+//            //setting up at the top of the line
+//            gridPath.moveToPoint(CGPoint(
+//                x:startPoint,
+//                y:0))
+//            
+//            //adding a point at the bottom of the line
+//            gridPath.addLineToPoint(CGPoint(
+//                x:startPoint,
+//                y:bounds.height))
+//            
+//            //changing the x position
+//            startPoint+=spaceBetween+gridWidth
+//            
+//            //setting the color of the stroke
+//            gridColor.setStroke()
+//            
+//            //drawing the stroke
+//            gridPath.stroke()
+//        }
+//        
+//        //horizontal lines
+//        
+//        //Calculating the space between the lines
+//        spaceBetween = (bounds.height-gridWidth*CGFloat(lineAmountHorizontal))/CGFloat(rows)
+//        
+//        //the starting y position
+//        startPoint = gridWidth/2
+//        
+//        for _ in 0..<lineAmountHorizontal{
+//            //setting up at the left of the line
+//            gridPath.moveToPoint(CGPoint(
+//                x:0,
+//                y:startPoint))
+//            
+//            //adding a point at the right of the line
+//            gridPath.addLineToPoint(CGPoint(
+//                x:bounds.width,
+//                y:startPoint))
+//            
+//            //changing the y position
+//            startPoint+=spaceBetween+gridWidth
+//            
+//            //setting the color of the stroke
+//            gridColor.setStroke()
+//            
+//            //drawing the stroke
+//            gridPath.stroke()
+//        }
         
-        //amount of lines that need to be drawn
-        let lineAmountHorizontal = rows+1
-        let lineAmountVertical = cols+1
+        //creating the vertical path
+        let verPath = UIBezierPath()
         
-        //creating the path
-        let gridPath = UIBezierPath()
+        //setting the width of the vertical path
+        verPath.lineWidth = gridWidth
         
-        gridPath.lineWidth=gridWidth
-        
-        //vertical lines
-        
-        //Calculating the space between the lines
-        var spaceBetween:CGFloat = (bounds.width - gridWidth*CGFloat(lineAmountVertical))/CGFloat(cols)
-        
-        //the starting x position
-        var startPoint:CGFloat = gridWidth/2
-        
-        for _ in 0..<lineAmountVertical{
-            //setting up at the top of the line
-            gridPath.moveToPoint(CGPoint(
-                x:startPoint,
-                y:0))
-            
-            //adding a point at the bottom of the line
-            gridPath.addLineToPoint(CGPoint(
-                x:startPoint,
-                y:bounds.height))
-            
-            //changing the x position
-            startPoint+=spaceBetween+gridWidth
-            
-            //setting the color of the stroke
-            gridColor.setStroke()
-            
-            //drawing the stroke
-            gridPath.stroke()
+        for r in 0...rows{
+            //moving to the top of graphview
+            verPath.moveToPoint(CGPoint(
+                x: bounds.width * CGFloat(r) / CGFloat(rows),
+                y: 0))
+
+            //adding a point to the bottom of the graphbiew
+            verPath.addLineToPoint(CGPoint(
+                x: bounds.width * CGFloat(r) / CGFloat(rows),
+                y: bounds.height))
         }
+        //setting the color of the stroke
+        gridColor.setStroke()
         
-        //horizontal lines
+        //drawing the vertical stroke
+        verPath.stroke()
         
-        //Calculating the space between the lines
-        spaceBetween = (bounds.height-gridWidth*CGFloat(lineAmountHorizontal))/CGFloat(rows)
         
-        //the starting y position
-        startPoint = gridWidth/2
+        //creating the horizontal path
+        let horPath = UIBezierPath()
         
-        for _ in 0..<lineAmountHorizontal{
-            //setting up at the left of the line
-            gridPath.moveToPoint(CGPoint(
-                x:0,
-                y:startPoint))
+        //setting the width of the horizontal path
+        horPath.lineWidth = gridWidth
+        
+        for c in 0...cols{
+            //moving to the left of the graphview
+            horPath.moveToPoint(CGPoint(
+                x: 0,
+                y: bounds.height * CGFloat(c) / CGFloat(cols)))
             
-            //adding a point at the right of the line
-            gridPath.addLineToPoint(CGPoint(
-                x:bounds.width,
-                y:startPoint))
-            
-            //changing the y position
-            startPoint+=spaceBetween+gridWidth
-            
-            //setting the color of the stroke
-            gridColor.setStroke()
-            
-            //drawing the stroke
-            gridPath.stroke()
+            //adding a point to the right of the graphview
+            horPath.addLineToPoint(CGPoint(
+                x: bounds.width,
+                y: bounds.height * CGFloat(c) / CGFloat(cols)))
         }
+
+        //setting the color of the stroke
+        gridColor.setStroke()
         
-        //Creating the cells in the grid
+        //drawing the horizontal stroke
+        horPath.stroke()
+
         for r in 0..<rows{
             for c in 0..<cols{
-                //Creating the rectangle for the cell to be placed in
+                
+                //Creating a rectangle to put the cell in
                 let rect = CGRect(
-                    x: bounds.width * CGFloat(r) / CGFloat(rows) + gridWidth,
-                    y: bounds.height * CGFloat(c) / CGFloat(cols) + gridWidth,
-                    width: bounds.width / CGFloat(rows) - 2 * gridWidth,
-                    height: bounds.height / CGFloat(cols) - 2 * gridWidth)
+                    x: bounds.width * CGFloat(r) / CGFloat(rows) + CGFloat(gridWidth/2),
+                    y: bounds.height * CGFloat(c) / CGFloat(cols) + CGFloat(gridWidth/2),
+                    width: bounds.width / CGFloat(rows) - CGFloat(gridWidth),
+                    height: bounds.height / CGFloat(cols) - CGFloat(gridWidth))
                 
-                //Creating the cell in the rectangle
-                let cell = UIBezierPath(ovalInRect: rect)
+                //Creating the cell
+                let path = UIBezierPath(ovalInRect: rect)
                 
-                //Getting the correct color depending on the cell state
+                //Choosing the correct color of the cell
                 switch grid[r][c]{
-                case .Living: livingColor.setFill()
-                case .Born: bornColor.setFill()
-                case .Died: diedColor.setFill()
-                case .Empty: emptyColor.setFill()
+                case .Living:
+                    livingColor.setFill()
+                case .Born:
+                    bornColor.setFill()
+                case .Died:
+                    diedColor.setFill()
+                case .Empty:
+                    emptyColor.setFill()
                 }
                 
-                //filling the color of the cell
-                cell.fill()
+                //Filling the cell
+                path.fill()
             }
         }
         
@@ -155,7 +211,70 @@ class GridView: UIView {
             self.setNeedsDisplayInRect(rect)
         }
     }
-}
+    
+    
+    var hor: Int = 0
+    var ver: Int = 0
+    //Getting the neighbors of a certain row and col
+    func neighbors(row: Int, col: Int) -> [(row:Int, col:Int)]{
 
+        return [((row+hor-1)%hor,(col+ver-1)%ver),
+                ((row+hor-1)%hor, col),
+                ((row+hor-1)%hor, (col+1)%ver),
+                (row, (col+ver-1)%ver),
+                (row, (col+1)%ver),
+                ((row+1)%hor, (col+ver-1)%ver),
+                ((row+1)%hor, col),
+                ((row+1)%hor, (col+1)%ver)]
+    }
+    
+    
+    func step(horizontal: Int, vertical: Int, cells: Array<Array<CellState>>) -> Array<Array<CellState>> {
+        var countNeighbors = 0
+        var arr  = Array<Array<CellState>>(count: cells.count, repeatedValue: [CellState](count: cells[0].count, repeatedValue: .Empty))
+        hor = horizontal
+        ver = vertical
+        for r in 0 ..< cells.count {
+            for y in 0 ..< cells[r].count{
+                let num = neighbors(r, col:y)
+                for item in num{
+                    if cells[item.0][item.1] == .Living || cells[item.0][item.1] == .Born{
+                        countNeighbors += 1
+                    }
+                }
+                
+                switch countNeighbors{
+                case 2:
+                    switch cells[r][y]{
+                    case .Born, .Living:
+                        arr[r][y] = .Living
+                    case .Died, .Empty:
+                        arr[r][y] = .Empty
+                    }
+                case 3:
+                    switch cells[r][y]{
+                    case .Died, .Empty:
+                        arr[r][y] = .Born
+                    case.Living, .Born:
+                        arr[r][y] = .Living
+                    }
+                default:
+                    switch cells[r][y]{
+                    case .Born, .Living:
+                        arr[r][y] = .Died
+                    case .Empty, .Died:
+                        arr[r][y] = .Empty
+                    }
+                }
+                
+                
+                countNeighbors = 0
+            }
+            
+        }
+        return arr
+    }
+    
+}
 
 

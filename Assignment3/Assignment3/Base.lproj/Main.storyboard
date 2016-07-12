@@ -4,7 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -20,29 +20,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fT3-zB-fCV" customClass="GridView" customModule="Assignment3" customModuleProvider="target">
-                                <rect key="frame" x="40" y="40" width="520" height="520"/>
+                                <rect key="frame" x="60" y="60" width="480" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fT3-zB-fCV" secondAttribute="height" multiplier="1:1" id="MvR-6j-Zw1"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="row">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="col">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="livingColor">
                                         <color key="value" red="0.41978016600000001" green="1" blue="0.30411971980000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
-                                        <color key="value" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="bornColor">
                                         <color key="value" red="0.41978016600000001" green="1" blue="0.30411971980000002" alpha="0.59889547413793098" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="diedColor">
-                                        <color key="value" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="0.60199353448275861" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="0.59568965519999995" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="gridColor">
                                         <color key="value" red="0.019547004252672195" green="0.023840146139264107" blue="0.0072414013557136059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,25 +53,33 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygl-w3-toB">
-                                <rect key="frame" x="264" y="568" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygl-w3-toB" userLabel="Iterate BUtton">
+                                <rect key="frame" x="278" y="550" width="45" height="30"/>
+                                <state key="normal" title="Iterate"/>
                                 <connections>
-                                    <action selector="Iterate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="731-CU-eN0"/>
+                                    <action selector="Iterate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oHN-EA-Ox0"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ygl-w3-toB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0ci-Aa-0UK"/>
                             <constraint firstItem="fT3-zB-fCV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WFv-16-iqz"/>
+                            <constraint firstItem="fT3-zB-fCV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.8" priority="750" id="XV6-7t-8Z2"/>
                             <constraint firstItem="fT3-zB-fCV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZKb-99-bJ2"/>
-                            <constraint firstItem="fT3-zB-fCV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="iF2-fL-5dW"/>
+                            <constraint firstItem="fT3-zB-fCV" firstAttribute="width" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="bfW-ty-a1P"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ygl-w3-toB" secondAttribute="bottom" constant="20" id="cEP-Wj-4EP"/>
+                            <constraint firstItem="fT3-zB-fCV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" priority="750" id="q5Y-HX-rZ0"/>
+                            <constraint firstItem="fT3-zB-fCV" firstAttribute="height" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.8" id="sQK-YA-MAi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Grid" destination="fT3-zB-fCV" id="69r-tt-CS2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="227"/>
+            <point key="canvasLocation" x="127" y="129"/>
         </scene>
     </scenes>
 </document>
