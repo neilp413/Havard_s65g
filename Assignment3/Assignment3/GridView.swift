@@ -165,8 +165,8 @@ class GridView: UIView {
         hor = horizontal
         ver = vertical
         for r in 0 ..< cells.count {
-            for y in 0 ..< cells[r].count{
-                let num = neighbors(r, col:y)
+            for c in 0 ..< cells[r].count{
+                let num = neighbors(r, col:c)
                 for item in num{
                     if cells[item.0][item.1] == .Living || cells[item.0][item.1] == .Born{
                         countNeighbors += 1
@@ -175,25 +175,25 @@ class GridView: UIView {
                 
                 switch countNeighbors{
                 case 2:
-                    switch cells[r][y]{
+                    switch cells[r][c]{
                     case .Born, .Living:
-                        arr[r][y] = .Living
+                        arr[r][c] = .Living
                     case .Died, .Empty:
-                        arr[r][y] = .Empty
+                        arr[r][c] = .Empty
                     }
                 case 3:
-                    switch cells[r][y]{
+                    switch cells[r][c]{
                     case .Died, .Empty:
-                        arr[r][y] = .Born
+                        arr[r][c] = .Born
                     case.Living, .Born:
-                        arr[r][y] = .Living
+                        arr[r][c] = .Living
                     }
                 default:
-                    switch cells[r][y]{
+                    switch cells[r][c]{
                     case .Born, .Living:
-                        arr[r][y] = .Died
+                        arr[r][c] = .Died
                     case .Empty, .Died:
-                        arr[r][y] = .Empty
+                        arr[r][c] = .Empty
                     }
                 }
                 
