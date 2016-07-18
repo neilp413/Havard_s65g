@@ -48,7 +48,7 @@ class GridView: UIView {
             verPath.moveToPoint(CGPoint(
                 x: bounds.width * CGFloat(r) / CGFloat(rows),
                 y: 0))
-
+            
             //adding a point to the bottom of the graphbiew
             verPath.addLineToPoint(CGPoint(
                 x: bounds.width * CGFloat(r) / CGFloat(rows),
@@ -78,13 +78,13 @@ class GridView: UIView {
                 x: bounds.width,
                 y: bounds.height * CGFloat(c) / CGFloat(cols)))
         }
-
+        
         //setting the color of the stroke
         gridColor.setStroke()
         
         //drawing the horizontal stroke
         horPath.stroke()
-
+        
         for r in 0..<rows{
             for c in 0..<cols{
                 
@@ -147,7 +147,7 @@ class GridView: UIView {
     var ver: Int = 0
     //Getting the neighbors of a certain row and col
     func neighbors(row: Int, col: Int) -> [(row:Int, col:Int)]{
-
+        
         return [((row+hor-1)%hor,(col+ver-1)%ver),
                 ((row+hor-1)%hor, col),
                 ((row+hor-1)%hor, (col+1)%ver),
