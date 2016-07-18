@@ -11,7 +11,6 @@ import UIKit
 class InstrumentationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        rowTextField.text = String(StandardEngine.sharedInstance.row)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -20,30 +19,37 @@ class InstrumentationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var rowTextField: UITextField!
+    @IBOutlet weak var rowText: UITextField!
+    @IBOutlet weak var ColumnText: UITextField!
     
+    @IBOutlet weak var rowStep: UIStepper!
+    @IBOutlet weak var columnStep: UIStepper!
     
-    @IBAction func updateRowTextField(sender: UITextField) {
-        if let text = sender.text,
-            let r = Int(text){
-            StandardEngine.sharedInstance.row = r
+    @IBOutlet weak var rateSlider: UISlider!
+    @IBOutlet weak var refreshSwitch: UISwitch!
+    
+    @IBAction func rowStep(sender: UIStepper) {
+        StandardEngine.sharedInstance.row = Int(rowStep.value)
+        rowText.text = String(Int(StandardEngine.sharedInstance.row))
+    }
+    
+    @IBAction func columnStep(sender: UIStepper) {
+        StandardEngine.sharedInstance.col = Int(columnStep.value)
+        ColumnText.text = String(Int(StandardEngine.sharedInstance.col))
+
+    }
+    
+    @IBAction func rateSlider(sender: AnyObject) {
+        StandardEngine.sharedInstance.refreshRate = NSTimeInterval(rateSlider.value)
+    }
+    
+    @IBAction func refreshSwitch(sender: UISwitch) {
+        if sender.on{
+            StandardEngine.sharedInstance.refreshRate = NSTimeInterval(rateSlider.value)
         }
-        else {
-            StandardEngine.sharedInstance.row = 0
+        else{
+            StandardEngine.sharedInstance.refreshTimer?.invalidate()
         }
     }
     
-    @IBAction func incrementRow(sender: UIStepper) {
-        if let text = rowTextField.text{
-            let r = Int(text)
-            rowTextField.text = String(r! + 10)
-        }
-    }
-    
-//    @IBAction func decrmentRow(sender: UIStepper) {
-//        if let text = rowTextField.text{
-//            let r = Int(text)
-//            rowTextField.text = String(r! - 10)
-//        }
-//    }
 }

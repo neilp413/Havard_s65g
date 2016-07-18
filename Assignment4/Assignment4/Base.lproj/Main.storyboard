@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--InstrumentationViewController-->
@@ -18,20 +19,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="row" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5as-IO-FDl" userLabel="Row Text Field">
-                                <rect key="frame" x="41" y="88" width="97" height="30"/>
+                                <rect key="frame" x="90" y="88" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="b3O-YS-YPP" userLabel="Row Stepper">
+                                <rect key="frame" x="321" y="89" width="94" height="29"/>
                                 <connections>
-                                    <action selector="updateRowTextField:" destination="9pv-A4-QxB" eventType="editingDidEnd" id="vLa-5d-V6b"/>
+                                    <action selector="rowStep:" destination="9pv-A4-QxB" eventType="valueChanged" id="SlS-3d-Tf3"/>
                                 </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="column" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qCK-mj-jsM" userLabel="Column Text Field">
-                                <rect key="frame" x="41" y="187" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </stepper>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="KMa-TR-Jki" userLabel="Column Stepper">
-                                <rect key="frame" x="239" y="188" width="94" height="29"/>
+                                <rect key="frame" x="316" y="188" width="94" height="29"/>
+                                <connections>
+                                    <action selector="columnStep:" destination="9pv-A4-QxB" eventType="valueChanged" id="II7-q7-qtC"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVU-a4-JkC">
                                 <rect key="frame" x="111" y="278" width="42" height="21"/>
@@ -47,23 +49,32 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="47D-U2-pOr">
                                 <rect key="frame" x="314" y="264" width="118" height="31"/>
+                                <connections>
+                                    <action selector="rateSlider:" destination="9pv-A4-QxB" eventType="valueChanged" id="ctv-OE-3YG"/>
+                                </connections>
                             </slider>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tbk-Hy-vbH">
                                 <rect key="frame" x="349" y="351" width="51" height="31"/>
-                            </switch>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="b3O-YS-YPP" userLabel="Row Stepper">
-                                <rect key="frame" x="199" y="89" width="94" height="29"/>
                                 <connections>
-                                    <action selector="decrmentRow:" destination="9pv-A4-QxB" eventType="valueChanged" id="UBj-oG-uyn"/>
-                                    <action selector="incrementRow:" destination="9pv-A4-QxB" eventType="valueChanged" id="7vZ-QP-YWL"/>
+                                    <action selector="refreshSwitch:" destination="9pv-A4-QxB" eventType="valueChanged" id="qs6-jM-C4O"/>
                                 </connections>
-                            </stepper>
+                            </switch>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="column" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qCK-mj-jsM" userLabel="Column Text Field">
+                                <rect key="frame" x="90" y="187" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Instrumentation" image="Puzzle-50" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="rowTextField" destination="5as-IO-FDl" id="hGE-bY-2bM"/>
+                        <outlet property="ColumnText" destination="qCK-mj-jsM" id="Vz6-Xd-aQB"/>
+                        <outlet property="columnStep" destination="KMa-TR-Jki" id="f4n-8G-vC0"/>
+                        <outlet property="rateSlider" destination="47D-U2-pOr" id="dRA-zZ-gMb"/>
+                        <outlet property="refreshSwitch" destination="Tbk-Hy-vbH" id="M53-Yh-1nf"/>
+                        <outlet property="rowStep" destination="b3O-YS-YPP" id="YSz-Kw-YPn"/>
+                        <outlet property="rowText" destination="5as-IO-FDl" id="i1E-DT-n16"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -81,7 +92,25 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNy-7y-vJ5">
+                                <rect key="frame" x="70" y="70" width="460" height="431"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vg8-Nx-cE3">
+                                <rect key="frame" x="277" y="501" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="vg8-Nx-cE3" secondAttribute="bottom" constant="20" id="NWP-fA-xGM"/>
+                            <constraint firstItem="vg8-Nx-cE3" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Ogq-bz-ReT"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="bNy-7y-vJ5" secondAttribute="bottom" constant="50" id="UQc-1J-YRV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bNy-7y-vJ5" secondAttribute="trailing" constant="50" id="k9Z-8Z-Jj8"/>
+                            <constraint firstItem="bNy-7y-vJ5" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="50" id="kd9-sW-Lna"/>
+                            <constraint firstItem="bNy-7y-vJ5" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="50" id="qtq-K6-9fh"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Simulation" image="Play-50" id="cPa-gy-q4n"/>
                 </viewController>
