@@ -13,7 +13,7 @@ class InstrumentationViewController: UIViewController {
     //declare the UI elements and actions
 
     @IBAction func refreshTimer(sender: AnyObject) {
-        StandardEngine.sharedInstance.refreshInterval = NSTimeInterval(refreshRateSlider.value)
+        StandardEngine.sharedInstance.refreshRate = Double(refreshRateSlider.value)
     }
     
     @IBOutlet weak var rowsTextField: UITextField!
@@ -63,7 +63,7 @@ class InstrumentationViewController: UIViewController {
 
     @IBAction func swtich(sender: UISwitch) {
         if sender.on{
-            StandardEngine.sharedInstance.refreshInterval = NSTimeInterval(refreshRateSlider.value)
+            StandardEngine.sharedInstance.refreshRate = Double(refreshRateSlider.value)
         }
         else{
             StandardEngine.sharedInstance.refreshTimer?.invalidate()

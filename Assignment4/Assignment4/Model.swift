@@ -106,17 +106,15 @@ class StandardEngine: EngineProtocol {
         }
     }
     
-    //set the default of variable refreshRate to 0.0
-    var refreshRate: Double = 0.0
-    
+
     var refreshTimer:NSTimer?
     
-    var refreshInterval: NSTimeInterval = 0 {
+    var refreshRate: Double = 0 {
         didSet {
-            if refreshInterval != 0 {
+            if refreshRate != 0 {
                 if let timer = refreshTimer { timer.invalidate() }
                 let sel = #selector(StandardEngine.timerDidFire(_:))
-                refreshTimer = NSTimer.scheduledTimerWithTimeInterval(refreshInterval,
+                refreshTimer = NSTimer.scheduledTimerWithTimeInterval(refreshRate,
                                                                       target: self,
                                                                       selector: sel,
                                                                       userInfo: nil,
