@@ -11,6 +11,7 @@ import UIKit
 class InstrumentationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        rowTextField.text = String(StandardEngine.sharedInstance.row)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -31,21 +32,16 @@ class InstrumentationViewController: UIViewController {
         }
     }
     
-    @IBAction func Switch(sender: UISwitch) {
-    }
     
     @IBAction func rowIncrement(sender: UIStepper) {
-        var r: Int = Int(rowTextField.text!)!
-            rowTextField.text = String(r += 10)
+        if let text = rowTextField.text{
+            let r = Int(text)
+            rowTextField.text = String(r! + 10)
+        }
     }
     
     @IBAction func rowDecrement(sender: UIStepper) {
-        StandardEngine.sharedInstance.row -= 10
+        
     }
-    @IBAction func columnIncrement(sender: UIStepper) {
-        StandardEngine.sharedInstance.col += 10
-    }
-    @IBAction func columnDecrement(sender: AnyObject) {
-        StandardEngine.sharedInstance.col -= 10
-    }
+
 }

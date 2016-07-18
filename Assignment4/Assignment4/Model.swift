@@ -90,7 +90,6 @@ class StandardEngine: EngineProtocol {
     
     var row: Int{
         didSet{
-            print("work")
             if let delegate = delegate {
                 delegate.engineDidUpdate(grid)
             }

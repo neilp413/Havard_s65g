@@ -1,5 +1,14 @@
 //
 //  GridView.swift
+//  Assignment4
+//
+//  Created by Neil Patel on 7/18/16.
+//  Copyright © 2016 Neil Patel. All rights reserved.
+//
+
+import Foundation
+//
+//  GridView.swift
 //  Assignment3
 //
 //  Created by Neil Patel on 7/9/16.
