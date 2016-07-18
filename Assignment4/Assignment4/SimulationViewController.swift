@@ -20,11 +20,15 @@ class SimulationViewController: UIViewController,EngineDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func StepButton(sender: UIButton) {
-        StandardEngine.sharedInstance.step()
+    @IBOutlet weak var gridView: GridView!
+    
+    
+    @IBAction func runButton(sender: UIButton) {
+        StandardEngine.sharedInstance.grid = StandardEngine.sharedInstance.step()
+
     }
     
     func engineDidUpdate(withGrid: GridProtocol) {
-        
+        gridView.setNeedsDisplay()
     }
 }
