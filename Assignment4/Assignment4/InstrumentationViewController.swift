@@ -22,26 +22,28 @@ class InstrumentationViewController: UIViewController {
     
     @IBOutlet weak var rowTextField: UITextField!
     
+    
     @IBAction func updateRowTextField(sender: UITextField) {
         if let text = sender.text,
-            let r = Int(text)  {
+            let r = Int(text){
             StandardEngine.sharedInstance.row = r
         }
-        else  {
+        else {
             StandardEngine.sharedInstance.row = 0
         }
     }
     
-    
-    @IBAction func rowIncrement(sender: UIStepper) {
+    @IBAction func incrementRow(sender: UIStepper) {
         if let text = rowTextField.text{
             let r = Int(text)
             rowTextField.text = String(r! + 10)
         }
     }
     
-    @IBAction func rowDecrement(sender: UIStepper) {
-        
-    }
-    
+//    @IBAction func decrmentRow(sender: UIStepper) {
+//        if let text = rowTextField.text{
+//            let r = Int(text)
+//            rowTextField.text = String(r! - 10)
+//        }
+//    }
 }
