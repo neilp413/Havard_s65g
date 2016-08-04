@@ -85,7 +85,7 @@
                             <constraint firstItem="f6A-uc-Svj" firstAttribute="leading" secondItem="nBk-sP-Rfw" secondAttribute="leadingMargin" constant="-20" id="u4i-qs-3V2"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Simulation" id="0e1-Ui-alJ"/>
+                    <tabBarItem key="tabBarItem" title="Simulation" image="Play-50" id="0e1-Ui-alJ"/>
                     <connections>
                         <outlet property="gridView" destination="sbe-tz-Bf4" id="qbC-ht-ec2"/>
                     </connections>
@@ -218,7 +218,7 @@
                             <constraint firstItem="rtf-oN-nLj" firstAttribute="top" secondItem="bkv-ec-DxY" secondAttribute="bottom" id="zgR-Gv-lDG"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Statistics" id="pe7-vP-frT"/>
+                    <tabBarItem key="tabBarItem" title="Statistics" image="Bar Chart-50" id="pe7-vP-frT"/>
                     <connections>
                         <outlet property="aliveTextField" destination="zEn-Lj-hpe" id="ZI5-wh-mdb"/>
                         <outlet property="bornTextField" destination="t6G-0p-Da8" id="vE7-8H-mUv"/>
@@ -363,7 +363,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="pmE-J6-Mgc" secondAttribute="trailing" constant="-20" id="vA6-EQ-RHr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Instrumentation" id="jbE-fD-DyN"/>
+                    <tabBarItem key="tabBarItem" title="Instrumentation" image="Puzzle-50" id="jbE-fD-DyN"/>
                     <navigationItem key="navigationItem" id="5kG-tc-5rJ"/>
                     <connections>
                         <outlet property="columnStepper" destination="l31-zz-gX4" id="cGX-EL-sm8"/>
@@ -525,4 +525,9 @@
             <point key="canvasLocation" x="-250" y="358"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Bar Chart-50" width="25" height="25"/>
+        <image name="Play-50" width="25" height="25"/>
+        <image name="Puzzle-50" width="25" height="25"/>
+    </resources>
 </document>
